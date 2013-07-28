@@ -1,0 +1,20 @@
+11110001	r0=1
+01100001	mem[1]=1
+10100100	r1=r0
+00000001	take input n
+01100000	store it to mem[0]
+11111100	set r3 =0
+10101000	r2=r0
+10011<tar>	if(r2<=r3)jump to #
+11000000	r0=mem[0]
+10101101	r3=r0
+11000001	r0=mem[1]	
+10101000	r2=mem[1]
+*	01010110	r1=r1*r2
+00101001	r2=r2+1
+10011<tar>	if(r2<=r3) jump to *
+11100101	else display r1
+00000011	halt
+#	11110001	load 1 to r0
+11100100	display 1
+00000011	halt

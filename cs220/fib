@@ -1,0 +1,17 @@
+00000001	load n to r0
+10100100	move n to r1
+11111001	load 1 to r2
+11111110	load 2 to r3
+11110001	load 1 to r0
+10110001  	swap r0 r1
+10110001*	swap r0 r1
+01100001  	store in mem[00001] value of r0
+00011011	add r2,r3;store in r0
+10101011	r2=r3
+10101100	move r0 to r3
+11000001	load to r0 value of mem[00001]
+00100001	add 1 to r0 to increase the counter
+10110001	swap r0 r1
+10010---	jump to step 6 if r1<=r0
+11100111	else display r3.
+00000011	halt

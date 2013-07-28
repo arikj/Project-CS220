@@ -1,0 +1,16 @@
+00001000	load the display time 100cs to r0
+01100100
+01100001	load r0 to mem[00001]
+00000001	take input1 upto which u have to show
+01100010	load value in r0 to mem[00010]
+00000001	load to r0 the no. and then shift to r3
+10101100	shift to r3
+11111001	load 1 to r2
+* 01011011	mul r2 and r3
+00101001	r2++
+11000001	fetch display time from mem[00001]
+11101001	display r1
+00001100	sleep for dislay
+11000010	fetch from mem[00010]
+10010<tar>	if r2<=r0 jump to * 
+00000011	halt

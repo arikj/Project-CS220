@@ -1,0 +1,28 @@
+00000001	take input from user for limit
+01100000	store it to memory[0]
+00000001	take input 0 for down 1 for up
+10100100	move r0 to r1
+11111100	load 0 to r3
+11111000	load 0 to r2
+00001000	load sleep time (100cs) to r0
+01100100	
+01100001	store sleep time to mem[1]
+10001<tar>	if(r1<=r3) jump to #
+11000000	r0=mem[0]
+10101100	r3=r0
+	//up counter
+11000001	r1 = mem[1]
+11100110	*display r2
+00001101	sleep for r1 secs
+00101001	r2++
+10011<tar>	if (r2<=r3) jump to *
+00000011	else halt
+	#down counter
+11000000        r0=mem[0]
+10101100        r3=r0
+	*display r3
+00001101	sleep for r1 csecs
+01001101	r3--
+00101001	r2++
+10010<tar>	if(r2<=r0)jump to *
+00000011	else halt
